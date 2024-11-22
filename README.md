@@ -99,15 +99,16 @@ Upload an image using curl:
 
 curl -X POST http://localhost:9000/upload \
   -F "image=@/path/to/your/image.jpg"
+```
 
 Example Response
+```bash
 
-
-Copy
 {
   "success": true,
   "imageUrl": "https://your-appwrite-server.com/v1/storage/buckets/your_bucket_id/files/unique_file_id/view?project=your_project_id"
 }
+```
 ```
 ### Project Structure
 .
@@ -182,4 +183,4 @@ Feel free to reach out if you have questions:
 
 Email: johnossai20@gmail.com
 
-Made with ☕ and 💻 by [John]
+Made with ☕ and 💻 by John
