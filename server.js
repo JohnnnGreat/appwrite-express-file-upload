@@ -42,7 +42,8 @@ const upload = multer({ dest: "uploads/" });
  * @param {express.Response} res - Express response object
  * @returns {Promise<void>}
  */
-app.post("/upload", upload.single("image"), async (req, res) => {
+app.post("/upload", upload.single("file"), async (req, res) => {
+   console.log(req.file);
    const file = req.file;
    if (!file) {
       return res.status(400).json({ error: "No file uploaded" });
