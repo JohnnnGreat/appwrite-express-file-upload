@@ -58,10 +58,9 @@ app.post("/upload", upload.single("file"), async (req, res) => {
       );
 
       // Construct the file URL manually
-      const fileUrl = `${process.env.APPWRITE_ENDPOINT}/storage/buckets/${process.env.APPWRITE_BUCKET_ID}/files/${uploadedFile.$id}/view?project=${process.env.APPWRITE_PROJECT_ID}`;
+      const fileUrl = `${process.env.APPWRITE_ENDPOINT}/storage/buckets/${process.env.APPWRITE_BUCKET_ID}/files/${uploadedFile.$id}/view?project=${process.env.APPWRITE_PROJECT_ID}&mode=admin`;
 
-      console.log("File uploaded successfully:", fileUrl);
-      return res.json({ success: true, imageUrl: fileUrl });
+      return res.json({ success: true, fileUrl });
    } catch (error) {
       console.error("Error uploading file:", error);
       return res.status(500).json({ error: "Error uploading file", details: error.message });
